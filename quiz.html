@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Quiz</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar nabar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Coding Quiz</a>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="leaderboard.html">High Scores</a>
+          </li>
+          <li class="nav-item"></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row question-row">
+          <div class="col-md-8">
+            <h4 class="question" id="question"></h4>
+          </div>
+          <div class="col-md-2 timer-title-col">
+            <p class="timer-title">Time remaining:</p>
+          </div>
+          <div class="col-md-2 timer-col">
+            <p class="timer" id="timer"></p>
+          </div>
+        </div>
+        <div class="row">
+          <ul class="col-md-8 answer-list" id="answer-list"></ul>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-12">
+                <p class="response" id="response"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 advance-col"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary Modal -->
+      <div class="modal fade" id="summaryModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="summaryModalTitle"></h4>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="stat-status" id="stat-status">
+                      <strong></strong>
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 stat-header">
+                    <p><strong>Time remaining:</strong></p>
+                  </div>
+                  <div class="col-md-6 stat-content">
+                    <p id="stat-time"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 stat-header">
+                    <p><strong>Percentage correct:</strong></p>
+                  </div>
+                  <div class="col-md-6 stat-content">
+                    <p id="stat-percent"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 stat-header">
+                    <p><strong>Questions answered:</strong></p>
+                  </div>
+                  <div class="col-md-6 stat-content">
+                    <p id="stat-qa"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 stat-header">
+                    <p><strong>Correct answers:</strong></p>
+                  </div>
+                  <div class="col-md-6 stat-content">
+                    <p id="stat-ca"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 stat-header">
+                    <p><strong>Incorrect answers:</strong></p>
+                  </div>
+                  <div class="col-md-6 stat-content">
+                    <p id="stat-wa"></p>
+                  </div>
+                </div>
+                <form id="submitLeaderboard">
+                  <div class="form-group">
+                    <label for="playerName">Enter name</label>
+                    <input type="text" id="playerName" class="form-control" />
+                  </div>
+                  <button type="submit" class="btn btn-outline-primary btn-sm">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer" id="modal-footer">
+              <a type="button" class="btn btn-secondary" href="quiz.html">
+                Restart
+              </a>
+              <a href="leaderboard.html" type="button" class="btn btn-primary">
+                High Scores
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="quiz.js"></script>
+</html>
